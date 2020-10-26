@@ -3,11 +3,18 @@
 
 let assert = require('assert')
 
+<<<<<<< HEAD
 // O(n) time, O(n) space
 function checkPermutations(a,b) {
     // strings must be the same length
     if (a.length !== b.length) return false
 
+=======
+function checkPermutations(a,b) {
+    // strings must be the same length
+    if (a.length !== b.length) return false
+    
+>>>>>>> 4d9a277bc35d2ff2c62fc8901079a2922137b987
     let chars = new Map()
     // count characters in string a
     for (var i = 0; i < a.length; i++) {
@@ -31,7 +38,10 @@ function checkPermutations(a,b) {
     return true
 }
 
+<<<<<<< HEAD
 // O(n * log n) time, O(1) extra space
+=======
+>>>>>>> 4d9a277bc35d2ff2c62fc8901079a2922137b987
 // function checkPermutations(a, b) {
 //     // String must be the same length
 //     if (a.length !== b.length) return false
@@ -44,6 +54,10 @@ function checkPermutations(a,b) {
 // }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4d9a277bc35d2ff2c62fc8901079a2922137b987
 describe('Check Permutations', () => {
     it('should return true if strings are permutations of eachother', () => {
         let a = "abbaccd"
