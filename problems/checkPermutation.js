@@ -54,5 +54,6 @@ describe('Check Permutations', () => {
     it('should return false if strings are not permutations of eachother', () => {
         let a = "abcdefg"
         let b = "filibuster"
+        assert.strictEqual(false, checkPermutations(a,b))
     })
 })
