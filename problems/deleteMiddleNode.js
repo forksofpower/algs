@@ -16,14 +16,16 @@ function deleteMiddleNode(head) {
 
     if (!fast.next.next) return head
 
+    // advance fast and slow, prev will stay at head
     fast = fast.next.next
     slow = slow.next
-    while(fast.next !== null) {
+    while(fast.next !== null && fast.next.next !== null) {
         fast = fast.next.next
         slow = slow.next
         prev = prev.next
     }
     
+    // delete middle node
     prev.next = slow.next
 
     return head
@@ -31,8 +33,8 @@ function deleteMiddleNode(head) {
 
 describe('Delete Middle Node', () => {
     it('returns a linked list with the middle node removed', () => {
-        let before = new Node(1, new Node(2, new Node(3, new Node(4, new Node(5, new Node(6, new Node(7)))))))
-        let after = new Node(1, new Node(2, new Node(3, new Node(5, new Node(6, new Node(7))))))
+        let before = new Node(1, new Node(2, new Node(3, new Node(4, new Node(5, new Node(6, new Node(7, new Node(8))))))))
+        let after = new Node(1, new Node(2, new Node(3, new Node(5, new Node(6, new Node(7, new Node(8)))))))
         assert.deepStrictEqual(after, deleteMiddleNode(before))
     })
     it('shouldn\'t delete the first and last nodes', () => {
